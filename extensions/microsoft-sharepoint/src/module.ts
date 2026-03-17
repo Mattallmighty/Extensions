@@ -4,6 +4,8 @@ import { getSharepointSiteInfoNode } from "./nodes/getSharepointSiteInfo";
 import { cloudConnection } from "./connections/cloudConnection";
 import { getSharepointListItemsNode } from "./nodes/getSharepointListItems";
 import { basicConnection } from "./connections/basicConnection";
+import { graphConnection } from "./connections/graphConnection";
+import { sharepointKnowledgeConnector } from "./knowledge-connectors/sharepointKnowledgeConnector";
 
 
 export default createExtension({
@@ -14,7 +16,12 @@ export default createExtension({
 
 	connections: [
 		cloudConnection,
-		basicConnection
+		basicConnection,
+		graphConnection
+	],
+
+	knowledge: [
+		sharepointKnowledgeConnector
 	],
 
 	options: {
